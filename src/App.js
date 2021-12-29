@@ -37,4 +37,3 @@ function App() {
 }
 
 export default App;
-//<Routepath="/appartement/:id"render={(match) => (  <Card appartement={appartements.find((a) => a.id === match.params.id)}  />)}>

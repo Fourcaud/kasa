@@ -10,12 +10,12 @@ class Gallery extends React.Component {
     super(props);
     this.state = {
       count: 0,
-      lengthImg: this.props.data.length - 2,
+      lengthImg: this.props.data.length,
     };
   }
 
   handleClickRight() {
-    if (this.state.count > this.state.lengthImg) {
+    if (this.state.count > this.state.lengthImg - 2) {
       this.setState({
         count: 0,
       });
@@ -28,7 +28,7 @@ class Gallery extends React.Component {
   handleClickLeft() {
     if (this.state.count <= 0) {
       this.setState({
-        count: this.state.lengthImg,
+        count: this.state.lengthImg - 2,
       });
     } else {
       this.setState({
@@ -74,11 +74,3 @@ class Gallery extends React.Component {
 }
 
 export default Gallery;
-//{
-//this.props.data.map((element) => (
-//   <div key={this.splitElement(element)}>
-//      <img src={element} alt={this.splitElement(element)} />
-///    </div>this.setState({
-//     count: 0,
-//     });
-// ))}
