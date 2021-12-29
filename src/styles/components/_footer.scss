@@ -1,0 +1,21 @@
+.footer {
+  margin: 100px 0 0 0;
+  display: flex;
+  justify-content: space-around;
+  background: black;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  bottom: 0;
+  width: 100%;
+
+  img {
+    width: 122px;
+    height: 40px;
+  }
+
+  h1 {
+    color: white;
+    font-size: 1.3rem;
+  }
+}

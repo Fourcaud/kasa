@@ -1,0 +1,22 @@
+.slider {
+  text-align: center;
+  position: relative;
+
+  img {
+    width: 95%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    filter: contrast(80%);
+  }
+  h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-2;
+    font-size: 1.5em;
+    width: 100%;
+    text-shadow: $color-1 1px 0 10px;
+  }
+}

@@ -1,0 +1,20 @@
+.gallery {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  .btn {
+    position: absolute;
+    top: 40%;
+    color: white;
+    font-size: 4em;
+  }
+  &__btn-next {
+    right: 5%;
+  }
+  &__btn-prev {
+    left: 5%;
+  }
+  .container-img {
+    width: 100%;
+  }
+}
