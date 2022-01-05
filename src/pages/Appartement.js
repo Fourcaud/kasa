@@ -16,37 +16,36 @@ class Appartement extends React.Component {
 
     if (!customData) {
       return <NotFound />;
-    } else {
-      return (
-        <div className="appartement">
-          <Gallery data={customData.pictures} />
-
-          <div className="header">
-            <h1>{customData.title}</h1>
-            <Host name={customData.host.name} img={customData.host.picture} />
-          </div>
-          <div className="location">{customData.location}</div>
-
-          <div className="section">
-            <Tags tags={customData.tags} />
-
-            <Rating number={customData.rating} />
-          </div>
-          <div className="container-list">
-            <List
-              name="Description"
-              data={[customData.description]}
-              className="list"
-            />
-            <List
-              name="Equipements"
-              data={customData.equipments}
-              className="list"
-            />
-          </div>
-        </div>
-      );
     }
+    return (
+      <div className="appartement">
+        <Gallery data={customData.pictures} />
+
+        <div className="header">
+          <h1>{customData.title}</h1>
+          <Host name={customData.host.name} img={customData.host.picture} />
+        </div>
+        <div className="location">{customData.location}</div>
+
+        <div className="section">
+          <Tags tags={customData.tags} />
+
+          <Rating number={customData.rating} />
+        </div>
+        <div className="container-list">
+          <List
+            name="Description"
+            data={[customData.description]}
+            className="list"
+          />
+          <List
+            name="Equipements"
+            data={customData.equipments}
+            className="list"
+          />
+        </div>
+      </div>
+    );
   }
 }
 

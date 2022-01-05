@@ -10,13 +10,16 @@ class Gallery extends React.Component {
     super(props);
     this.state = {
       count: 0,
-      lengthImg: this.props.data.length,
-      oneImg: this.props.data.length === 1 ? true : false,
     };
   }
-
+  isSingleImg() {
+    return this.props.data.length === 1;
+  }
+  getImgLength() {
+    return this.props.data.length;
+  }
   handleClickRight() {
-    if (this.state.count > this.state.lengthImg - 2) {
+    if (this.state.count > this.getImgLength() - 2) {
       this.setState({
         count: 0,
       });
@@ -29,7 +32,7 @@ class Gallery extends React.Component {
   handleClickLeft() {
     if (this.state.count <= 0) {
       this.setState({
-        count: this.state.lengthImg - 2,
+        count: this.getImgLength() - 2,
       });
     } else {
       this.setState({
@@ -45,7 +48,7 @@ class Gallery extends React.Component {
   }
 
   render() {
-    if (this.state.oneImg) {
+    if (this.isSingleImg()) {
       return (
         <div className="gallery">
           {
@@ -59,36 +62,35 @@ class Gallery extends React.Component {
               />
             </div>
           }
-        </div>
-      );
-    } else {
-      return (
-        <div className="gallery">
-          <FontAwesomeIcon
-            icon={faChevronRight}
-            className="gallery__btn-next btn"
-            onClick={() => this.handleClickRight()}
-          />
-
-          {
-            <div
-              key={this.splitElement(this.props.data[this.state.count])}
-              className="container-img"
-            >
-              <img
-                src={this.props.data[this.state.count]}
-                alt={this.splitElement(this.props.data[this.state.count])}
-              />
-            </div>
-          }
-          <FontAwesomeIcon
-            icon={faChevronLeft}
-            className="gallery__btn-prev btn"
-            onClick={() => this.handleClickRight()}
-          />
         </div>
       );
     }
+    return (
+      <div className="gallery">
+        <FontAwesomeIcon
+          icon={faChevronRight}
+          className="gallery__btn-next btn"
+          onClick={() => this.handleClickRight()}
+        />
+
+        {
+          <div
+            key={this.splitElement(this.props.data[this.state.count])}
+            className="container-img"
+          >
+            <img
+              src={this.props.data[this.state.count]}
+              alt={this.splitElement(this.props.data[this.state.count])}
+            />
+          </div>
+        }
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+          className="gallery__btn-prev btn"
+          onClick={() => this.handleClickRight()}
+        />
+      </div>
+    );
   }
 }
 
