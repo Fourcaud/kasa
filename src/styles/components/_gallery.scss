@@ -7,6 +7,9 @@
     top: 40%;
     color: white;
     font-size: 4em;
+    &:hover {
+      color: rgb(49, 47, 47);
+    }
   }
   &__btn-next {
     right: 5%;
