@@ -21,5 +21,3 @@ class Card extends React.Component {
 }
 
 export default Card;
-
-//to={{ pathname: `appartement/${appartement.link}`, state: { appartement}}to={`/appartement/${appartement.id}`}
